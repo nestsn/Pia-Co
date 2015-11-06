@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pia Shop</title>
+<script type="text/javascript">
+	$("#slideshow > div:gt(0)").hide();
+
+	setInterval(function() { 
+	  $('#slideshow > div:first')
+		.fadeOut(1000)
+		.next()
+		.fadeIn(1000)
+		.end()
+		.appendTo('#slideshow');
+	},  3000);
+</script>
+<style>
+	table{
+		width:80%;
+		margin-left:10%;
+		margin-right:10%;
+		margin-top:50px;
+	}
+	<!-- .background{
+		width: 100%;
+		height: 100%;
+		opacity: 0.2;
+		position: fixed;
+		text-align: center;
+		margin-top:10px;
+		z-index: -1;
+	} -->
+	.toplogo{
+		float:right;
+		margin-right:100px;
+		margin-top:20px;
+	}
+	.topmenu{
+		
+	}
+	ul{
+		margin-left: 90px;
+		padding-top: 170px;
+		list-style-type: none;
+		position: fixed;
+	}
+	li{
+		float: left;
+		padding: 8px;
+		
+	}
+	li a{
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 20px;
+		font-family: tahoma;		
+		color: #1F1F2E;	
+	}
+	#slideshow { 
+		margin: 50px auto; 
+		position: relative; 
+		width: 240px; 
+		height: 240px; 
+		padding: 10px; 
+		box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	}
+
+	#slideshow > div { 
+		position: absolute; 
+		top: 10px; 
+		left: 10px; 
+		right: 10px; 
+		bottom: 10px; 
+	}
+</style>
+</head>
+
+<body>
+	<!-- <div class="background">
+		<img src="background.jpg" height="inherit" width="inherit" />
+	</div> -->
+	<div class="header">
+		<div class="topmenu">
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><img src="spacemenu.png"/></li>
+				<li><a href="">Gallery</a></li>
+				<li><img src="spacemenu.png"/></li>
+				<li><a href="">FAQs</a></li>
+				<li><img src="spacemenu.png"/></li>
+				<li><a href="">Contact Us</a></li>
+			</ul>
+		</div>
+		<div class="toplogo">
+			<img src="logo2.jpg" width="75%" height="75%"/>
+		</div>
+	</div>
+	<div class="contents">
+		<table>
+			<tr>
+				<td>
+					<p>Singapore’s award-winning cupcakery has arrived!</p>
+					<p>Twelve Cupcakes opened its doors in July 2011 in Singapore and has grown rapidly with overwhelming response from its passionate customers. The strong following is due to the brand promise to deliver only freshly baked cupcakes that are handmade from scratch every day. Coupled with the use of quality gourmet ingredients, Twelve Cupcakes does not cut corners in creating the perfect cupcake for the Asian palate.
+					</p>
+					<p>A Twelve Cupcakes' Cupcake is moist, fluffy and less sweet and has a light smooth frosting that tantalises the palate. Many satisfy their sweet-tooth cravings with these elegant-looking treats that are housed in their signature pink boxes. They are perfect for gatherings or just to give your day a sweet ending.
+					</p>
+					<p>Twelve Cupcakes is the best cupcakery in Singapore, having sold over 3 million cupcakes in such a short period of time. We are excited to bring our famous cupcakes to Indonesia and give everyone here an opportunity to taste the best cupcakes ever. Come visit us to find out why thousands of people across Singapore have given us their stamp of approval!
+					</p>
+					<p>Have you tried a Twelve Cupcakes' cupcake?</p>
+				</td>
+				<td>
+					<div id="slideshow">
+					   <div>
+						 <img src="pia1.jpg" width="240px" height="240px"/>
+					   </div>
+					   <div>
+						 <img src="pia2.jpg" width="240px" height="240px"/>
+					   </div>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+
+</html>
