@@ -3,9 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Pia Shop</title>
-<script type="text/javascript">
-	$("#slideshow > div:gt(0)").hide();
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script language="JavaScript" type="text/JavaScript">
+	$(document).ready(function(){
+		showHome();
+	});
+	
 	setInterval(function() { 
 	  $('#slideshow > div:first')
 		.fadeOut(1000)
@@ -14,6 +17,24 @@
 		.end()
 		.appendTo('#slideshow');
 	},  3000);
+	
+	function showHome() {
+		$('.home').show();
+		$('.faqs').hide();
+		$('.contact').hide();
+	}
+	
+	function showFaqs() {
+		$('.home').hide();
+		$('.faqs').show();
+		$('.contact').hide();
+	}
+	
+	function showContact() {
+		$('.home').hide();
+		$('.faqs').hide();
+		$('.contact').show();
+	}
 </script>
 <style>
 	table{
@@ -22,25 +43,13 @@
 		margin-right:10%;
 		margin-top:50px;
 	}
-	<!-- .background{
-		width: 100%;
-		height: 100%;
-		opacity: 0.2;
-		position: fixed;
-		text-align: center;
-		margin-top:10px;
-		z-index: -1;
-	} -->
 	.toplogo{
-		float:right;
-		margin-right:100px;
-		margin-top:20px;
-	}
-	.topmenu{
-		
+		margin-left:800px;
+		margin-top: 20px;
+		position:fixed;
 	}
 	ul{
-		margin-left: 90px;
+		margin-left: 120px;
 		padding-top: 170px;
 		list-style-type: none;
 		position: fixed;
@@ -55,41 +64,68 @@
 		font-weight: bold;
 		font-size: 20px;
 		font-family: tahoma;		
-		color: #1F1F2E;	
+		color: black;	
 	}
 	#slideshow { 
-		margin: 50px auto; 
+		margin-left: 800px;
+		margin-top: -320px;
 		position: relative; 
-		width: 240px; 
-		height: 240px; 
+		width: 300px; 
+		height: 300px; 
 		padding: 10px; 
 		box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+		background-color: white;
+		background-image: url("slideback.jpg");
+		background-size: 100%;
 	}
 
 	#slideshow > div { 
 		position: absolute; 
-		top: 10px; 
+		top: 20px; 
 		left: 10px; 
 		right: 10px; 
 		bottom: 10px; 
+	}
+	body{
+		font-family: tahoma;
+		font-size: 13px;
+	}
+	.topmenu{
+		width:600px;
+	}
+	.background{
+		z-index:-1;
+		position:fixed;
+		height: 220px;
+		margin-left:138px;
+		margin-top:20px;
+		border-radius: 25px;
+	}
+	.contents{
+		margin-top: 220px;
+		position: fixed;
+	}
+	.words{
+		width:600px;
+		height: 320px;
+		margin-left: 138px;
+		margin-top: 70px;
 	}
 </style>
 </head>
 
 <body>
-	<!-- <div class="background">
-		<img src="background.jpg" height="inherit" width="inherit" />
-	</div> -->
 	<div class="header">
 		<div class="topmenu">
+			<img src="header2.png" class="background"/>
 			<ul>
-				<li><a href="">Home</a></li>
-				<li><img src="spacemenu.png"/></li>
-				<li><a href="">Gallery</a></li>
-				<li><img src="spacemenu.png"/></li>
-				<li><a href="">FAQs</a></li>
-				<li><img src="spacemenu.png"/></li>
-				<li><a href="">Contact Us</a></li>
+				<li><a id="home" href="#" onclick="showHome();return false;">Home</a></li>
+				<li style="opacity:0;"><img src="spacemenu.png"/ ></li>
+				<li><a href="http://www.online-instagram.com/user/pia_and_co/2222447271" target="_blank">Gallery</a></li>
+				<li style="opacity:0;"><img src="spacemenu.png"/></li>
+				<li><a id="home" href="#" onclick="showFaqs();return false;">FAQs</a></li>
+				<li style="opacity:0;"><img src="spacemenu.png"/></li>
+				<li><a id="home" href="#" onclick="showContact();return false;">Contact Us</a></li>
 			</ul>
 		</div>
 		<div class="toplogo">
@@ -97,31 +133,42 @@
 		</div>
 	</div>
 	<div class="contents">
-		<table>
-			<tr>
-				<td>
-					<p>Singapore’s award-winning cupcakery has arrived!</p>
-					<p>Twelve Cupcakes opened its doors in July 2011 in Singapore and has grown rapidly with overwhelming response from its passionate customers. The strong following is due to the brand promise to deliver only freshly baked cupcakes that are handmade from scratch every day. Coupled with the use of quality gourmet ingredients, Twelve Cupcakes does not cut corners in creating the perfect cupcake for the Asian palate.
-					</p>
-					<p>A Twelve Cupcakes' Cupcake is moist, fluffy and less sweet and has a light smooth frosting that tantalises the palate. Many satisfy their sweet-tooth cravings with these elegant-looking treats that are housed in their signature pink boxes. They are perfect for gatherings or just to give your day a sweet ending.
-					</p>
-					<p>Twelve Cupcakes is the best cupcakery in Singapore, having sold over 3 million cupcakes in such a short period of time. We are excited to bring our famous cupcakes to Indonesia and give everyone here an opportunity to taste the best cupcakes ever. Come visit us to find out why thousands of people across Singapore have given us their stamp of approval!
-					</p>
-					<p>Have you tried a Twelve Cupcakes' cupcake?</p>
-				</td>
-				<td>
-					<div id="slideshow">
-					   <div>
-						 <img src="pia1.jpg" width="240px" height="240px"/>
-					   </div>
-					   <div>
-						 <img src="pia2.jpg" width="240px" height="240px"/>
-					   </div>
-					</div>
-				</td>
-			</tr>
-		</table>
+		<div class="words">
+			<div class="home">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac semper magna. Etiam suscipit elit non fermentum hendrerit. Mauris mollis justo urna, at consectetur odio scelerisque non. Pellentesque a ligula nunc. Mauris iaculis blandit est, eget maximus nulla fringilla sit amet. In ante mauris, aliquet id lectus eget, volutpat tincidunt nunc. Pellentesque porttitor dui non augue efficitur varius. Aliquam vel mollis nibh. Etiam ac tortor magna. Suspendisse malesuada, velit id facilisis dictum, libero lorem dapibus nisl, in pretium erat elit eu magna. Curabitur tempus dictum dolor, sit amet egestas diam vestibulum dictum. Morbi in leo ac justo posuere venenatis sit amet at metus. Sed placerat, est at vestibulum molestie, mi nulla malesuada orci, efficitur iaculis lorem odio venenatis felis.
+				</p>
+				<p>
+					Cras sagittis sit amet felis eget iaculis. Curabitur suscipit non velit et vulputate. Sed pretium hendrerit fermentum. Vestibulum ornare libero at sagittis commodo. Vestibulum iaculis odio quis auctor interdum. In pharetra luctus libero et ullamcorper. Vestibulum hendrerit ullamcorper dui, non elementum erat consectetur eget. Duis finibus, diam ac varius faucibus, nisi ligula tristique lorem, nec rutrum lectus diam non est.
+				<p>
+				</p>
+				<p>
+					Pellentesque nec lorem convallis, molestie tellus sed, aliquet lorem. Sed elementum porttitor semper. Suspendisse semper massa non leo eleifend ornare. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed imperdiet vestibulum accumsan. Pellentesque varius luctus lobortis. Nulla imperdiet semper posuere. Aenean tristique elit ac tempor porta.
+				</p>
+			</div>
+			<div class="faqs">
+				<p>FAQs</p>
+			</div>
+			<div class="contact">
+				<p>Contact Us</p>
+			</div>
+		</div>
+		<div id="slideshow">
+		   <div>
+			 <img src="pia1.jpg" width="300px" height="200px"/>
+		   </div>
+		   <div>
+			 <img src="pia2.jpg" width="300px" height="200px"/>
+		   </div>
+		   <div>
+			 <img src="pia3.png" width="300px" height="200px"/>
+		   </div>
+		</div>
 	</div>
+	
+	<script type="text/javascript">
+		$("#slideshow > div:gt(0)").hide();
+	</script>
 </body>
 
 </html>
